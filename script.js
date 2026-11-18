@@ -1,10 +1,12 @@
 const API_BASE_URL = "https://pokeapi.co/api/v2";
 let typeEnum;
+let pokemonList = [];
+let next = "";
 
 async function init() {
-  getDataFromAPI();
-  getDataFromAPI("/pokemon");
   typeEnum = await getAllTypes();
+  await loadNextPokemons();
+  loadNextPokemons();
 }
 
 async function getDataFromAPI(path = "") {
@@ -26,6 +28,23 @@ async function getAllTypes() {
     res = await getDataByUrl(res.next);
     typeNames.push(...res.results.map((entry) => entry.name));
   }
-  typeEnum = Object.freeze(Object.fromEntries(typeNames.map((name) => [name.toUpperCase(), name])));
-  return typeEnum;
+  return Object.freeze(Object.fromEntries(typeNames.map((name) => [name.toUpperCase(), name])));
+}
+
+async function loadNextPokemons() {
+  if (next == "") {
+    let nextPokemons = await getDataFromAPI("/pokemon");
+    const allPokeDataFromThisFetch = await Promise.all(
+      nextPokemons.results.map((pokemon) => getDataByUrl(pokemon.url)),
+    );
+    pokemonList.push(...allPokeDataFromThisFetch);
+    next = nextPokemons.next;
+  } else {
+    let nextPokemons = await getDataByUrl(next);
+    const allPokeDataFromThisFetch = await Promise.all(
+      nextPokemons.results.map((pokemon) => getDataByUrl(pokemon.url)),
+    );
+    pokemonList.push(...allPokeDataFromThisFetch);
+    next = nextPokemons.next;
+  }
 }
