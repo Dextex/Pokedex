@@ -47,11 +47,28 @@ async function loadNextPokemons() {
 
 function iteratePokemons() {
   let testDIV = document.getElementById("test");
+  testDIV.innerHTML = "";
   for (let i = 0; i < pokemonList.length; i++) {
+    console.log(pokemonList[i]);
+
     testDIV.innerHTML += renderpokemons(pokemonList[i]);
   }
 }
 
+function getPokemonGif(pokemon) {}
+
 function renderpokemons(pokemon) {
-  return ` <li>${pokemon.name}</li> `;
+  return `<button>
+      <div>
+        <p>#${pokemon.id}</p>
+        <h2>${pokemon.name}</h2>
+      </div>
+      <img src="${pokemon.sprites.other.showdown.front_default}" alt="pokemonbild" />
+      <div>
+        <ul>
+          <li><img src="" alt="blatt" /></li>
+          <li><img src="" alt="Gift" /></li>
+        </ul>
+      </div>
+    </button>`;
 }
