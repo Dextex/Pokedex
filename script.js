@@ -6,7 +6,8 @@ let next = "";
 async function init() {
   typeEnum = await getAllTypes();
   await loadNextPokemons();
-  loadNextPokemons();
+  await loadNextPokemons();
+  console.log(pokemonList);
 }
 
 async function getDataFromAPI(path = "") {
@@ -32,19 +33,15 @@ async function getAllTypes() {
 }
 
 async function loadNextPokemons() {
+  let nextPokemons;
   if (next == "") {
-    let nextPokemons = await getDataFromAPI("/pokemon");
-    const allPokeDataFromThisFetch = await Promise.all(
-      nextPokemons.results.map((pokemon) => getDataByUrl(pokemon.url)),
-    );
-    pokemonList.push(...allPokeDataFromThisFetch);
-    next = nextPokemons.next;
+    nextPokemons = await getDataFromAPI("/pokemon");
   } else {
-    let nextPokemons = await getDataByUrl(next);
-    const allPokeDataFromThisFetch = await Promise.all(
-      nextPokemons.results.map((pokemon) => getDataByUrl(pokemon.url)),
-    );
-    pokemonList.push(...allPokeDataFromThisFetch);
-    next = nextPokemons.next;
+    nextPokemons = await getDataByUrl(next);
   }
+  const allPokeDataFromThisFetch = await Promise.all(
+    nextPokemons.results.map((pokemon) => getDataByUrl(pokemon.url)),
+  );
+  pokemonList.push(...allPokeDataFromThisFetch);
+  next = nextPokemons.next;
 }
