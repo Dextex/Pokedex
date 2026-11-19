@@ -55,6 +55,16 @@ function iteratePokemons() {
   }
 }
 
+function setPokemonTypes(typeList) {
+  let returnTypeList = "";
+  for (let i = 0; i < typeList.length; i++) {
+    let type = typeList[i].type.name.toUpperCase();
+    returnTypeList += `<li><img src="./assets/img/${typeEnum[type]}-type-symbol-old.png" alt="blatt" /></li>`;
+  }
+
+  return returnTypeList;
+}
+
 function renderPokemonCards(pokemon) {
   return `<button>
       <div>
@@ -64,8 +74,7 @@ function renderPokemonCards(pokemon) {
       <img src="${pokemon.sprites.other.showdown.front_default}" alt="pokemonbild" />
       <div>
         <ul>
-          <li><img src="" alt="blatt" /></li>
-          <li><img src="" alt="Gift" /></li>
+        ${setPokemonTypes(pokemon.types)}
         </ul>
       </div>
     </button>`;
