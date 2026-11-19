@@ -51,13 +51,11 @@ function iteratePokemons() {
   for (let i = 0; i < pokemonList.length; i++) {
     console.log(pokemonList[i]);
 
-    testDIV.innerHTML += renderpokemons(pokemonList[i]);
+    testDIV.innerHTML += renderPokemonCards(pokemonList[i]);
   }
 }
 
-function getPokemonGif(pokemon) {}
-
-function renderpokemons(pokemon) {
+function renderPokemonCards(pokemon) {
   return `<button>
       <div>
         <p>#${pokemon.id}</p>
