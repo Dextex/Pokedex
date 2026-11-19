@@ -6,8 +6,6 @@ let next = "";
 async function init() {
   typeEnum = await getAllTypes();
   await loadNextPokemons();
-  await loadNextPokemons();
-  console.log(pokemonList);
 }
 
 async function getDataFromAPI(path = "") {
@@ -44,4 +42,16 @@ async function loadNextPokemons() {
   );
   pokemonList.push(...allPokeDataFromThisFetch);
   next = nextPokemons.next;
+  iteratePokemons();
+}
+
+function iteratePokemons() {
+  let testDIV = document.getElementById("test");
+  for (let i = 0; i < pokemonList.length; i++) {
+    testDIV.innerHTML += renderpokemons(pokemonList[i]);
+  }
+}
+
+function renderpokemons(pokemon) {
+  return ` <li>${pokemon.name}</li> `;
 }
