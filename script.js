@@ -50,7 +50,6 @@ function iteratePokemons() {
   testDIV.innerHTML = "";
   for (let i = 0; i < pokemonList.length; i++) {
     console.log(pokemonList[i]);
-
     testDIV.innerHTML += renderPokemonCards(pokemonList[i]);
   }
 }
@@ -61,7 +60,6 @@ function setPokemonTypes(typeList) {
     let type = typeList[i].type.name.toUpperCase();
     returnTypeList += `<li><img src="./assets/img/${typeEnum[type]}-type-symbol-old.png" alt="blatt" /></li>`;
   }
-
   return returnTypeList;
 }
 
