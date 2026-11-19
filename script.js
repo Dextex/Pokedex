@@ -64,8 +64,9 @@ function setPokemonTypes(typeList) {
 }
 
 function renderPokemonCards(pokemon) {
-  return `<button>
-      <div>
+  return `
+    <button class="pokemon_card">
+      <div class="card_header">
         <p>#${pokemon.id}</p>
         <h2>${pokemon.name}</h2>
       </div>
@@ -75,5 +76,6 @@ function renderPokemonCards(pokemon) {
         ${setPokemonTypes(pokemon.types)}
         </ul>
       </div>
-    </button>`;
+    </button>
+  `;
 }
