@@ -46,7 +46,7 @@ async function loadNextPokemons() {
 }
 
 function iteratePokemons() {
-  let testDIV = document.getElementById("test");
+  let testDIV = document.getElementById("galerie");
   testDIV.innerHTML = "";
   for (let i = 0; i < pokemonList.length; i++) {
     console.log(pokemonList[i]);

@@ -17,6 +17,12 @@
   --dark-color: #50413a;
   --steel-color: #599db2;
   --fairy-color: #ed6ff4;
+  --header-color: #092029;
+  --background-color: #06151d;
+}
+
+body {
+  background-color: var(--background-color);
 }
 
 .normal {
