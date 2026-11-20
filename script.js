@@ -80,7 +80,7 @@ function renderPokemonCards(pokemon) {
       </div>
       <div>
         <ul>
-        ${setPokemonTypes(pokemon.types)}
+          ${setPokemonTypes(pokemon.types)}
         </ul>
       </div>
     </button>

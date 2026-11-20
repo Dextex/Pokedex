@@ -49,7 +49,7 @@ li {
 
 .test {
   display: flex;
-  flex: 1;
   flex-wrap: wrap;
+  flex: 1;
   gap: 20px;
 }
