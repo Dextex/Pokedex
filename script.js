@@ -75,7 +75,9 @@ function renderPokemonCards(pokemon) {
         <p>#${pokemon.id}</p>
         <h2>${pokemon.name}</h2>
       </div>
-      <img class="${getPrimaryType(pokemon.types)}" src="${pokemon.sprites.other.showdown.front_default}" alt="pokemonbild" />
+      <div class="img_container ${getPrimaryType(pokemon.types)}">
+        <img src="${pokemon.sprites.other.showdown.front_default}" alt="pokemonbild" />
+      </div>
       <div>
         <ul>
         ${setPokemonTypes(pokemon.types)}
