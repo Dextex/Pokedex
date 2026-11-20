@@ -1,24 +1,3 @@
-:root {
-  --Normal-color: #a0a09e;
-  --Fire-color: #e9262c;
-  --Water-color: #2981ef;
-  --Electric-color: #f7ba00;
-  --Grass-color: #3c9b23;
-  --Ice-color: #3bdaff;
-  --Fighting-color: #ff8000;
-  --Poison-color: #903dc9;
-  --Ground-color: #914e23;
-  --Flying-color: #81b7f3;
-  --Psychic-color: #ef4079;
-  --Bug-color: #889f13;
-  --Rock-color: #b0a884;
-  --Ghost-color: #6f4170;
-  --Dragon-color: #4b64db;
-  --Dark-color: #50413a;
-  --Steel-color: #599db2;
-  --Fairy-color: #ed6ff4;
-}
-
 * {
   margin: 0px;
   box-sizing: border-box;
