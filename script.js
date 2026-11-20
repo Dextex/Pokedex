@@ -63,6 +63,11 @@ function setPokemonTypes(typeList) {
   return returnTypeList;
 }
 
+function getPrimaryType(pokemonTypes) {
+  console.log(pokemonTypes);
+  return pokemonTypes[0].type.name;
+}
+
 function renderPokemonCards(pokemon) {
   return `
     <button class="pokemon_card">
@@ -70,7 +75,7 @@ function renderPokemonCards(pokemon) {
         <p>#${pokemon.id}</p>
         <h2>${pokemon.name}</h2>
       </div>
-      <img src="${pokemon.sprites.other.showdown.front_default}" alt="pokemonbild" />
+      <img class="${getPrimaryType(pokemon.types)}" src="${pokemon.sprites.other.showdown.front_default}" alt="pokemonbild" />
       <div>
         <ul>
         ${setPokemonTypes(pokemon.types)}
