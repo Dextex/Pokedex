@@ -24,14 +24,23 @@ li {
   gap: 10px;
   min-width: 200px;
   min-height: 250px;
-  padding: 0;
+  padding: 0px;
+  border: none;
 }
 
 .card_header {
   display: flex;
+  min-height: 50px;
   justify-content: center;
   align-items: center;
   gap: 10px;
+}
+
+.card_footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 40px;
 }
 
 .pokemon_card ul img {
