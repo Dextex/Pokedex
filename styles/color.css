@@ -25,6 +25,10 @@ body {
   background-color: var(--background-color);
 }
 
+.pokemon_card {
+  background-color: var(--header-color);
+}
+
 .normal {
   background-color: var(--normal-color);
 }
