@@ -17,6 +17,12 @@ header img {
   height: 30px;
 }
 
+header > div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
 ul {
   display: flex;
   justify-content: center;
