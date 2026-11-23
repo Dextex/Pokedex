@@ -1,11 +1,18 @@
 const API_BASE_URL = "https://pokeapi.co/api/v2";
 let typeEnum;
 let pokemonList = [];
+let currentPokemonList = [];
 let next = "";
 
 async function init() {
   typeEnum = await getAllTypes();
   await loadNextPokemons();
+  resetCurrentPokemonList();
+  iteratePokemons();
+}
+
+function resetCurrentPokemonList() {
+  currentPokemonList = pokemonList.slice();
 }
 
 async function getDataFromAPI(path = "") {
@@ -42,15 +49,13 @@ async function loadNextPokemons() {
   );
   pokemonList.push(...allPokeDataFromThisFetch);
   next = nextPokemons.next;
-  iteratePokemons();
 }
 
 function iteratePokemons() {
   let testDIV = document.getElementById("galerie");
   testDIV.innerHTML = "";
-  for (let i = 0; i < pokemonList.length; i++) {
-    console.log(pokemonList[i]);
-    testDIV.innerHTML += renderPokemonCards(pokemonList[i]);
+  for (let i = 0; i < currentPokemonList.length; i++) {
+    testDIV.innerHTML += renderPokemonCards(currentPokemonList[i]);
   }
 }
 
@@ -64,8 +69,17 @@ function setPokemonTypes(typeList) {
 }
 
 function getPrimaryType(pokemonTypes) {
-  console.log(pokemonTypes);
   return pokemonTypes[0].type.name;
+}
+
+function searchByName() {
+  let filterWord = document.getElementById("searchInputField").value;
+  if (filterWord.length > 2) {
+    currentPokemonList = pokemonList.filter((pokemon) => pokemon.name.includes(filterWord));
+  } else {
+    resetCurrentPokemonList();
+  }
+  iteratePokemons();
 }
 
 function renderPokemonCards(pokemon) {
