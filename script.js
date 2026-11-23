@@ -83,12 +83,16 @@ function searchByName() {
   iteratePokemons();
 }
 
+function makeFirstLetterUpperCase(word) {
+  return word.charAt(0).toUpperCase() + word.slice(1);
+}
+
 function renderPokemonCards(pokemon) {
   return `
     <button class="pokemon_card">
       <div class="card_header">
         <p>#${pokemon.id}</p>
-        <h2>${pokemon.name}</h2>
+        <h2>${makeFirstLetterUpperCase(pokemon.name)}</h2>
       </div>
       <div class="img_container ${getPrimaryType(pokemon.types)}">
         <img src="${pokemon.sprites.other.showdown.front_default}" alt="pokemonbild" />
