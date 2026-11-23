@@ -1,3 +1,71 @@
 dialog {
   margin: auto;
+  border: none;
+  padding: 0px;
+  border-radius: 25px;
+}
+
+.pokemon_card_big {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  min-width: 200px;
+  min-height: 250px;
+  padding: 0px;
+  border: none;
+}
+.pokemon_card_big .card_header {
+  display: flex;
+  min-height: 50px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.pokemon_card_big .card_footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 40px;
+}
+
+.pokemon_card_big ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.pokemon_card_big ul img {
+  height: 30px;
+  border-radius: 50%;
+}
+
+.img_container_big {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  flex-grow: 1;
+}
+
+.button_wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 20px;
+  width: 100%;
+}
+
+.button_wrapper button {
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border: none;
+}
+.button_wrapper button img {
+  width: 50px;
+  height: 50px;
+}
+.rotate180 {
+  rotate: 180deg;
 }
