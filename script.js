@@ -42,6 +42,7 @@ async function getAllTypes() {
 }
 
 async function loadNextPokemons() {
+  showLoadingSpinner();
   let nextPokemons;
   if (next == "") {
     nextPokemons = await getDataFromAPI("/pokemon");
