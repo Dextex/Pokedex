@@ -81,3 +81,15 @@ li {
   flex-wrap: wrap;
   gap: 20px;
 }
+
+.pokeball_loading_spinner {
+  animation: rotate 0.5s infinite linear;
+}
+
+.pokemon_img:hover {
+  transform: translateY(-4px);
+  filter: drop-shadow(10px 8px 1px rgb(0 0 0));
+  transition:
+    transform 180ms ease,
+    filter 180ms ease;
+}

@@ -5,13 +5,18 @@ let currentPokemonList = [];
 let next = "";
 
 async function init() {
+  showLoadingSpinner();
   typeEnum = await getAllTypes();
   await loadNextPokemons();
-  resetCurrentPokemonList();
 }
 
 function resetCurrentPokemonList() {
   currentPokemonList = pokemonList.slice();
+}
+
+function showLoadingSpinner() {
+  let galerieRef = document.getElementById("galerie");
+  galerieRef.innerHTML = `<img class="pokeball_loading_spinner" src="./assets/img/pokeball-icon.png" alt="pokeball" />`;
 }
 
 async function getDataFromAPI(path = "") {
@@ -53,10 +58,10 @@ async function loadNextPokemons() {
 }
 
 function iteratePokemons() {
-  let testDIV = document.getElementById("galerie");
-  testDIV.innerHTML = "";
+  let galerieRef = document.getElementById("galerie");
+  galerieRef.innerHTML = "";
   for (let i = 0; i < currentPokemonList.length; i++) {
-    testDIV.innerHTML += renderPokemonCards(currentPokemonList[i]);
+    galerieRef.innerHTML += renderPokemonCards(currentPokemonList[i]);
   }
 }
 
@@ -95,7 +100,7 @@ function renderPokemonCards(pokemon) {
         <h2>${makeFirstLetterUpperCase(pokemon.name)}</h2>
       </div>
       <div class="img_container ${getPrimaryType(pokemon.types)}">
-        <img src="${pokemon.sprites.other.showdown.front_default}" alt="pokemonbild" />
+        <img class="pokemon_img" src="${pokemon.sprites.other.showdown.front_default}" alt="pokemonbild" />
       </div>
       <div class="card_footer">
         <ul>
