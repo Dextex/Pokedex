@@ -39,7 +39,7 @@ function renderDialog(pokemon) {
              <ul id="statsList">
              </ul>
              <div class="button_wrapper">
-                <button><img class="rotate180" src="./assets/img/image.png" alt="pfeil" /></button>
+                <button onclick="previousPokemon(${pokemon.id})"><img class="rotate180" src="./assets/img/image.png" alt="pfeil" /></button>
                 <button onclick="nextPokemon(${pokemon.id})"><img src="./assets/img/image.png" alt="pfeil" /></button>
              </div>
           </section>
@@ -68,4 +68,13 @@ function nextPokemon(pokemonID) {
   setupPokemon(indexOfPokemon);
 }
 
-function previousPokemon() {}
+function previousPokemon(pokemonID) {
+  let indexOfPokemon = findPokemonByID(pokemonID);
+  indexOfPokemon--;
+  if (indexOfPokemon < 0) {
+    indexOfPokemon = currentPokemonList.length - 1;
+  }
+
+  dialogRef.innerHTML = renderDialog(currentPokemonList[indexOfPokemon]);
+  setupPokemon(indexOfPokemon);
+}
