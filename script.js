@@ -95,7 +95,7 @@ function makeFirstLetterUpperCase(word) {
 
 function renderPokemonCards(pokemon) {
   return `
-    <button class="pokemon_card">
+    <button class="pokemon_card" onclick="openDialog(${pokemon.id})">
       <div class="card_header">
         <p>#${pokemon.id}</p>
         <h2>${makeFirstLetterUpperCase(pokemon.name)}</h2>
