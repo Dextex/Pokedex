@@ -8,7 +8,6 @@ async function init() {
   typeEnum = await getAllTypes();
   await loadNextPokemons();
   resetCurrentPokemonList();
-  iteratePokemons();
 }
 
 function resetCurrentPokemonList() {
@@ -49,6 +48,8 @@ async function loadNextPokemons() {
   );
   pokemonList.push(...allPokeDataFromThisFetch);
   next = nextPokemons.next;
+  resetCurrentPokemonList();
+  iteratePokemons();
 }
 
 function iteratePokemons() {
