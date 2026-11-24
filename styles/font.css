@@ -55,6 +55,10 @@
   src: url(".assets./fonts/outfit-v15-latin-900.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
+* {
+  font-family: "Outfit";
+}
+
 .pokemon_card {
   color: white;
 }
