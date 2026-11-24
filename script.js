@@ -86,6 +86,15 @@ function searchByName() {
   } else {
     resetCurrentPokemonList();
   }
+  const textRef = document.getElementById("not_found");
+  if (currentPokemonList.length == 0) {
+    textRef.classList.add("show");
+    textRef.classList.remove("hide");
+  } else {
+    textRef.classList.remove("show");
+    textRef.classList.add("hide");
+  }
+
   iteratePokemons();
 }
 
