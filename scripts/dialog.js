@@ -4,7 +4,6 @@ function openDialog(pokemonID) {
   bodyRef.classList.add("display_open");
   bodyRef.appendChild;
   dialogRef.showModal();
-  console.log(pokemonID);
   const indexOfPokemon = findPokemonByID(pokemonID);
   setupPokemon(indexOfPokemon);
 }
@@ -16,7 +15,6 @@ function closeDialog() {
 
 function setupPokemon(pokemonID) {
   let pokemon = currentPokemonList[pokemonID];
-  console.log(pokemon);
   dialogRef.innerHTML = renderDialog(pokemon);
   let stats = pokemon.stats;
   let statsListRef = document.getElementById("statsList");
