@@ -27,6 +27,12 @@ main {
   width: 100%;
   background-color: var(--header-color);
   color: white;
+  border-radius: 15px;
+  border: none;
+}
+
+.load_more_button:hover {
+  border: solid 1px white;
 }
 
 header {
