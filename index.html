@@ -19,13 +19,17 @@
         <img src="./assets/img/pokeball-icon.png" alt="Pokeball Icon" />
         <h1>Pokedex</h1>
       </div>
-      <div><input id="searchInputField" oninput="searchByName()" type="text" /></div>
+      <div>
+        <input data-id="search-input" id="searchInputField" oninput="searchByName()" type="text" />
+      </div>
     </header>
-    <main class="content">
+    <main data-id="content" class="content">
       <div class="galerie" id="galerie"></div>
     </main>
-    <button class="load_more_button" onclick="loadNextPokemons()">Load More</button>
-    <dialog onclick="closeDialog()" id="dialog"></dialog>
+    <button data-id="load-more-button" class="load_more_button" onclick="loadNextPokemons()">
+      Load More
+    </button>
+    <dialog data-id="dialog" onclick="closeDialog()" id="dialog"></dialog>
     <footer>
       <img src="./assets/img/DA-Logo.png" alt="Logo der Developer Akademie" />
     </footer>
