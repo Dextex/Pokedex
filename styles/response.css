@@ -4,6 +4,11 @@
     height: 500px;
   }
 }
+@media (min-width: 631px) {
+  .chart-wrapper {
+    height: 200px;
+  }
+}
 
 @media (min-width: 420px) {
   header {

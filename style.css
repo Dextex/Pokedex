@@ -167,3 +167,10 @@ li {
   display: block;
   color: white;
 }
+
+.chart-wrapper {
+  height: 150px;
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 1 / 1;
+}

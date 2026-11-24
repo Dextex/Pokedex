@@ -13,7 +13,9 @@ function renderDialog(pokemon) {
                 ${setPokemonTypes(pokemon.types)}
               </ul>
              </div>
-             <ul class="stats_list" id="statsList">
+             <div class="chart-wrapper">
+                <canvas id="myChart"></canvas>
+             </div>
              </ul>
              <div class="button_wrapper">
                 <button data-id="prev-button" onclick="previousPokemon(${pokemon.id})"><img class="rotate180" src="./assets/img/image.png" alt="pfeil" /></button>
