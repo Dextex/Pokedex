@@ -92,22 +92,3 @@ function searchByName() {
 function makeFirstLetterUpperCase(word) {
   return word.charAt(0).toUpperCase() + word.slice(1);
 }
-
-function renderPokemonCards(pokemon) {
-  return `
-    <button class="pokemon_card" onclick="openDialog(${pokemon.id})">
-      <div class="card_header">
-        <p>#${pokemon.id}</p>
-        <h2>${makeFirstLetterUpperCase(pokemon.name)}</h2>
-      </div>
-      <div class="img_container ${getPrimaryType(pokemon.types)}">
-        <img class="pokemon_img" src="${pokemon.sprites.other.showdown.front_default}" alt="pokemonbild" />
-      </div>
-      <div class="card_footer">
-        <ul>
-          ${setPokemonTypes(pokemon.types)}
-        </ul>
-      </div>
-    </button>
-  `;
-}
