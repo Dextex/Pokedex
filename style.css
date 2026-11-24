@@ -141,8 +141,10 @@ li {
 
 .hide {
   display: none;
+  color: white;
 }
 
 .show {
   display: block;
+  color: white;
 }

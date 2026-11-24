@@ -25,10 +25,10 @@ function renderDialog(pokemon) {
 
 function renderPokemonCards(pokemon) {
   return `
-    <button data-id="card" class="pokemon_card" onclick="openDialog(${pokemon.id})">
+    <button aria-haspopup="dialog" aria-controls="dialog" data-id="card" class="pokemon_card" onclick="openDialog(${pokemon.id})">
       <div class="card_header">
         <p>#${pokemon.id}</p>
-        <h2>${makeFirstLetterUpperCase(pokemon.name)}</h2>
+        <h2 id="dialogTitle">${makeFirstLetterUpperCase(pokemon.name)}</h2>
       </div>
       <div class="img_container ${getPrimaryType(pokemon.types)}">
         <img data-id="card-image" class="pokemon_img" src="${pokemon.sprites.other.showdown.front_default}" alt="pokemonbild" />
