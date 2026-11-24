@@ -1,0 +1,31 @@
+@media (max-width: 480px) {
+  dialog {
+    width: 300px;
+    height: 500px;
+  }
+}
+
+@media (min-width: 420px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 800px) {
+  main {
+    padding: 0px 20px;
+  }
+  header {
+    padding: 0px 80px;
+  }
+}
+
+@media screen and (min-width: 1441px) {
+  main {
+    padding: 0px max(120px, calc(50% - 720px));
+  }
+  header {
+    padding: 0px max(120px, calc(50% - 720px));
+  }
+}

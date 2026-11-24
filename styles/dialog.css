@@ -3,6 +3,11 @@ dialog {
   border: none;
   padding: 0px;
   border-radius: 25px;
+  overflow: hidden;
+  height: 60dvh;
+  width: 50dvw;
+  max-height: 900px;
+  max-width: 600px;
 }
 
 .pokemon_card_big {
@@ -13,7 +18,8 @@ dialog {
   gap: 10px;
   min-width: 200px;
   min-height: 250px;
-  padding: 0px;
+  height: 100%;
+  padding: 10px 0px;
   border: none;
 }
 .pokemon_card_big .card_header {
@@ -77,4 +83,9 @@ dialog {
 .display_open {
   overflow: hidden;
   position: fixed;
+}
+
+.pokemon_img_big {
+  height: 80%;
+  width: auto;
 }
