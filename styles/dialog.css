@@ -87,4 +87,5 @@ dialog {
 .pokemon_img_big {
   height: 80%;
   width: auto;
+  object-fit: cover;
 }
