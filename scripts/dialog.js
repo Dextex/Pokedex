@@ -1,5 +1,8 @@
 const dialogRef = document.getElementById("dialog");
+const bodyRef = document.getElementById("body");
 function openDialog(pokemonID) {
+  bodyRef.classList.add("display_open");
+  bodyRef.appendChild;
   dialogRef.showModal();
   console.log(pokemonID);
   const indexOfPokemon = findPokemonByID(pokemonID);
@@ -7,6 +10,7 @@ function openDialog(pokemonID) {
 }
 
 function closeDialog() {
+  bodyRef.classList.remove("display_open");
   dialogRef.close();
 }
 
@@ -31,12 +35,12 @@ function renderDialog(pokemon) {
             <div class="img_container_big ${getPrimaryType(pokemon.types)}">
               <img class="pokemon_img_big" src="${pokemon.sprites.other.showdown.front_default}" alt="pokemonbild" />
             </div>
-            <div class="card_footer">
-              <ul>
+            <div class="card_footer_big">
+              <ul class="type_list">
                 ${setPokemonTypes(pokemon.types)}
               </ul>
              </div>
-             <ul id="statsList">
+             <ul class="stats_list" id="statsList">
              </ul>
              <div class="button_wrapper">
                 <button onclick="previousPokemon(${pokemon.id})"><img class="rotate180" src="./assets/img/image.png" alt="pfeil" /></button>

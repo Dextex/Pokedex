@@ -31,7 +31,7 @@ dialog {
   min-height: 40px;
 }
 
-.pokemon_card_big ul {
+.stats_list {
   display: flex;
   flex-direction: column;
 }
@@ -68,4 +68,13 @@ dialog {
 }
 .rotate180 {
   rotate: 180deg;
+}
+
+.type_list {
+  flex-direction: row;
+}
+
+.display_open {
+  overflow: hidden;
+  position: fixed;
 }
