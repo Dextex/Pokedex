@@ -35,6 +35,12 @@ main {
   border: solid 1px white;
 }
 
+input {
+  border-radius: 15px;
+  background-color: var(--background-color);
+  color: white;
+}
+
 header {
   height: 90px;
   width: 100%;
