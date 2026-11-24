@@ -4,6 +4,10 @@
   scroll-behavior: smooth;
 }
 
+button {
+  cursor: pointer;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -21,6 +25,8 @@ main {
   max-height: 50px;
   height: 50px;
   width: 100%;
+  background-color: var(--header-color);
+  color: white;
 }
 
 header {
