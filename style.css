@@ -138,6 +138,7 @@ li {
 
 .pokeball_loading_spinner {
   animation: rotate 0.5s infinite linear;
+  max-width: 300px;
 }
 
 .pokemon_img:hover {
