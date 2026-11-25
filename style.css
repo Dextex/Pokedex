@@ -8,6 +8,10 @@ button {
   cursor: pointer;
 }
 
+.title_wrapper {
+  cursor: pointer;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -138,7 +142,7 @@ li {
 
 .pokeball_loading_spinner {
   animation: rotate 0.5s infinite linear;
-  max-width: 300px;
+  max-width: 150px;
 }
 
 .pokemon_img:hover {

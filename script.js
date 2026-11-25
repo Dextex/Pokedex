@@ -8,6 +8,11 @@ async function init() {
   showLoadingSpinner();
   typeEnum = await getAllTypes();
   await loadNextPokemons();
+  resetAll();
+}
+
+function reload() {
+  location.reload();
 }
 
 function resetCurrentPokemonList() {
@@ -56,6 +61,7 @@ async function loadNextPokemons() {
   next = nextPokemons.next;
   resetCurrentPokemonList();
   iteratePokemons();
+  resetAll();
 }
 
 function iteratePokemons() {
@@ -96,6 +102,14 @@ function searchByName() {
   }
 
   iteratePokemons();
+}
+
+function resetAll() {
+  let searchInputRef = document.getElementById("searchInputField");
+  searchInputRef.value = "";
+  const textRef = document.getElementById("not_found");
+  textRef.classList.remove("show");
+  textRef.classList.add("hide");
 }
 
 function makeFirstLetterUpperCase(word) {

@@ -6,7 +6,7 @@ function renderDialog(pokemon) {
               <h2>${makeFirstLetterUpperCase(pokemon.name)}</h2>
             </div>
             <div class="img_container_big ${getPrimaryType(pokemon.types)}">
-              <img data-id="dialog-image" class="pokemon_img_big" src="${pokemon.sprites.front_default}" alt="pokemonbild" />
+              <img data-id="dialog-image" class="pokemon_img_big" src="${pokemon.sprites.front_default}" alt="pokemon image from ${pokemon.name}" />
             </div>
             <div class="card_footer_big">
               <ul class="type_list">
@@ -33,7 +33,7 @@ function renderPokemonCards(pokemon) {
         <h2 id="dialogTitle">${makeFirstLetterUpperCase(pokemon.name)}</h2>
       </div>
       <div class="img_container ${getPrimaryType(pokemon.types)}">
-        <img data-id="card-image" class="pokemon_img" src="${pokemon.sprites.other.showdown.front_default}" alt="pokemonbild" />
+        <img data-id="card-image" class="pokemon_img" src="${pokemon.sprites.other.showdown.front_default}" alt="pokemon image from ${pokemon.name}" />
       </div>
       <div class="card_footer">
         <ul>
